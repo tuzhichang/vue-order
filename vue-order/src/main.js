@@ -8,6 +8,8 @@ import seller from './components/seller/seller'
 import VueRouter from 'vue-router'
 import vueResource from 'vue-resource'
 
+import './common/styl/index.styl'
+
 Vue.use(VueRouter)
 Vue.use(vueResource)
 const routes = [
