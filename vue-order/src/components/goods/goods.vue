@@ -40,7 +40,7 @@
         </ul>
       </div>
       <shopcart :deliveryPrice="seller.deliveryPrice"
-                :minPrice="seller.minPrice" :selectedFoods="selectedFoods"></shopcart>
+                :minPrice="seller.minPrice" :selectedFoods="selectedFoods" ref="shopcart"></shopcart>
     </div>
   </div>
 </template>
@@ -102,7 +102,14 @@
       }
     },
     methods: {
-      addFood () {},
+      addFood (target) {
+        this._drop(target)
+      },
+      _drop (target) {
+        this.$nextTick(() => {
+          this.$refs.shopcart.drop(target)
+        })
+      },
       selectMenu (index, event) {
         if (!event._constructed) {
           return

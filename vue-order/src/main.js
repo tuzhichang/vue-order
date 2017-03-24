@@ -14,6 +14,10 @@ Vue.use(VueRouter)
 Vue.use(vueResource)
 const routes = [
   {
+    path: '/',
+    component: goods
+  },
+  {
     path: '/goods',
     component: goods
   },
